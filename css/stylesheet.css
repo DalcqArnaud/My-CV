@@ -22,8 +22,7 @@ img {
 }
 
 .photo{    
-    justify-self: center;  
-    align-self: center;
+    place-self: center;  
 }
 
 .heading {
@@ -38,12 +37,24 @@ img {
 }
 
 .contactinfo {
+    display: grid;
+    grid-template-columns: 5% 95%;
+
     font-size: 18px; 
     padding-left: 10px; 
     padding-top: 10px; 
     padding-bottom: 10px; 
     background-color: #b69f9f; 
-    color: white
+    color: white;
+}
+
+.iconContainer{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.iconContainer>.icon{
+    place-self: center;
 }
 
 .subheading {
@@ -51,13 +62,50 @@ img {
     font-weight: bolder; 
     color: #ce1d1d; 
     text-transform: uppercase; 
-    padding-left: 10px;
+    padding: 10px;
 }
 
 .icon {
     color: #ce1d1d; 
     float: left; 
     padding-right: 10px;
+}
+
+.skills{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 20% 75% 5%;
+    grid-template-rows: repeat(4, 25%);
+    row-gap: 5px;
+}
+
+.skills>div[class*="skill_prog"]{
+    width: 100%; 
+    height: 5px; 
+    position: relative;
+    align-self: center;
+}
+
+.skills>div[class*="skill_per"]{
+    place-self: center;
+}
+
+.skills>div[class*="skill_name"]{
+    min-width: 200px;
+}
+
+.skills>div>span:nth-of-type(1n + 1) {
+    position: absolute; 
+    height: 100%; 
+    background: #ce1d1d;
+}
+
+.expContainer{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 10px;
+    margin: 10px;
 }
 
 .date {
@@ -76,35 +124,13 @@ img {
 }
 
 .social {
-    padding-left: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 7%);
 }
 
-.skills ul li{
-    display: flex; 
-    justify-content: space-between; 
-    margin-bottom: 10px; 
-    align-items: center; 
-    margin-left: -10px;
-}
-
-.skills ul li .skill_prog {
-    width: 50%; 
-    height: 5px; 
-    position: relative;
-}
-
-.skills ul li .skill_prog span {
-    position: absolute; 
-    height: 100%; 
-    background: #ce1d1d;
-}
-
-.skill_name {
-    width: 200px;
-}
-
-.skill_per {
-    margin-right: 10px;
+.social>a{
+    place-self: center;
 }
 
 .social>a>.icon{
